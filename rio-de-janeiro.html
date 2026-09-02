@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Río de Janeiro — Guía</title>
+<meta name="description" content="Salidas, samba y planes de día en Río de Janeiro. Guía de un amigo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Karla:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noite:#06192B;
+  --mar:#0C3A3F;
+  --sol:#FFC24A;
+  --coral:#FF5E5B;
+  --areia:#F6F1E8;
+  --areia-dim:#CFC8BB;
+  --line:rgba(246,241,232,.22);
+
+  --d-lun:#5FD68A;
+  --d-mar:#5AA9E6;
+  --d-mie:#B08BE8;
+  --d-jue:#FF9F45;
+  --d-vie:#FF5E5B;
+  --d-sab:#FFC24A;
+  --d-dom:#8FA3B0;
+
+  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M-30 20 Q-15 2 0 20 T30 20 T60 20 T90 20 T120 20 T150 20' fill='none' stroke='%23F3EDE2' stroke-width='9'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;background-color:var(--noite)}
+body{
+  background-color:var(--noite);
+  color:var(--areia);
+  min-height:100%;
+  font-family:'Karla','Helvetica Neue',Arial,sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  overflow-x:hidden;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+
+.display{
+  font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+  font-variation-settings:'wdth' 118;
+  font-weight:800;
+  letter-spacing:-.02em;
+  line-height:.92;
+  text-transform:uppercase;
+}
+.mono{font-family:'Space Mono','SFMono-Regular',Consolas,monospace}
+
+/* ---------- HERO ---------- */
+.follow-top{
+  display:block;text-align:center;text-decoration:none;
+  background:var(--sol);color:var(--noite);
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;font-weight:700;
+  padding:9px 16px;
+}
+.follow-top svg{width:10px;height:10px;vertical-align:-1px;margin-left:2px}
+.hero{padding:40px 0 30px;position:relative;background-color:var(--noite)}
+.eyebrow{
+  font-family:'Space Mono',monospace;
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sol);margin-bottom:20px;
+}
+.hero .wrap{container-type:inline-size}
+.hero h1{
+  font-family:'Archivo','Helvetica Neue',Arial,sans-serif;
+  font-variation-settings:'wdth' 125;
+  font-weight:900;text-transform:uppercase;
+  font-size:clamp(2.4rem,15vw,6.6rem);
+  font-size:clamp(2.4rem,15.5cqw,6.6rem);
+  line-height:.85;letter-spacing:-.035em;
+  max-width:100%;
+}
+.hero h1 em{font-style:normal;color:var(--sol);display:block}
+.hero p.lede{
+  margin-top:22px;max-width:34ch;
+  font-size:1.05rem;color:var(--areia-dim);
+}
+.hoy-line{
+  margin-top:26px;display:flex;align-items:center;gap:10px;
+  font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--areia-dim);
+}
+.hoy-line .dot{width:8px;height:8px;border-radius:50%;background:var(--sol);flex:none}
+.hoy-line{flex-wrap:wrap}
+.clima{display:inline-flex;align-items:center;gap:7px;color:var(--areia)}
+.clima::before{content:"·";color:var(--areia-dim);margin-right:1px}
+.wx{width:22px;height:22px;flex:none;overflow:visible}
+.wx-sun{fill:var(--sol)}
+.wx-rays{stroke:var(--sol);stroke-width:2;stroke-linecap:round;
+  transform-box:fill-box;transform-origin:center;animation:wx-spin 14s linear infinite}
+.wx-cloud{fill:var(--areia-dim);transform-box:fill-box;transform-origin:center;animation:wx-drift 5s ease-in-out infinite}
+.wx-drop{stroke:#5AA9E6;stroke-width:2;stroke-linecap:round;animation:wx-fall 1.2s linear infinite}
+.wx-drop:nth-of-type(3){animation-delay:.4s}
+.wx-drop:nth-of-type(4){animation-delay:.8s}
+.wx-bolt{fill:var(--sol);animation:wx-flash 2.4s steps(1,end) infinite}
+@keyframes wx-spin{to{transform:rotate(360deg)}}
+@keyframes wx-drift{0%,100%{transform:translateX(-.8px)}50%{transform:translateX(.8px)}}
+@keyframes wx-fall{0%{transform:translateY(-1px);opacity:0}25%{opacity:1}100%{transform:translateY(6px);opacity:0}}
+@keyframes wx-flash{0%,88%,100%{opacity:.3}90%,96%{opacity:1}}
+
+/* ---------- CALÇADÃO ---------- */
+.calcadao{
+  height:30px;margin:44px 0 0;
+  background-color:var(--noite);
+  background-image:var(--wave);
+  background-size:96px 30px;
+  background-repeat:repeat-x;
+  opacity:.9;
+}
+.calcadao.thin{opacity:.35;margin:0}
+
+/* ---------- SECTIONS ---------- */
+section{padding:44px 0;background-color:var(--noite)}
+.sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.sec-head h2{
+  font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 112;
+  font-weight:800;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(1.5rem,7vw,2.3rem);line-height:1;max-width:100%;
+}
+.sec-sub{color:var(--areia-dim);font-size:.94rem;margin-bottom:28px;max-width:40ch}
+
+/* ---------- DAY TABS ---------- */
+#noche{background-color:var(--noite);padding-top:0}
+.tabs-rail{
+  position:sticky;top:0;z-index:20;
+  background-color:var(--noite);
+  border-bottom:1px solid var(--line);
+  margin:0 -22px;padding:12px 22px;
+}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:none;cursor:pointer;
+  background:transparent;color:var(--areia);
+  border:1px solid var(--line);border-radius:999px;
+  padding:8px 15px;
+  font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.tab:hover{border-color:var(--areia-dim)}
+.tab[aria-selected="true"]{background:var(--c,var(--sol));color:#06192B;border-color:var(--c,var(--sol));font-weight:700}
+.tab:focus-visible,.link:focus-visible,.hoy:focus-visible{outline:2px solid var(--sol);outline-offset:3px}
+
+.tabs-top .tab{color:var(--c)}
+.tabs-top .tab[aria-selected="true"]{color:#06192B}
+.tabs-top{margin-bottom:9px}
+.panel{padding-top:30px;container-type:inline-size}
+.panel-lede{color:var(--areia-dim);font-size:.97rem;margin:-14px 0 26px;max-width:40ch}
+.panel[hidden]{display:none}
+.panel-title{
+  font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 118;
+  font-weight:900;text-transform:uppercase;letter-spacing:-.02em;
+  font-size:clamp(1.8rem,10vw,3.2rem);
+  font-size:clamp(1.8rem,10.5cqw,3.2rem);line-height:.9;
+  max-width:100%;
+  color:var(--c);margin-bottom:26px;
+}
+
+/* ---------- ITEM ---------- */
+.item{
+  border-top:1px solid var(--line);
+  padding:20px 0 22px;
+}
+.item:last-child{border-bottom:1px solid var(--line)}
+.emo{
+  display:inline-block;margin-right:9px;
+  font-size:1.05em;line-height:1;
+  font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;
+}
+.item h3{
+  font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 105;
+  font-weight:700;font-size:1.18rem;line-height:1.2;letter-spacing:-.01em;
+}
+.time{
+  display:inline-block;margin-bottom:9px;
+  font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;
+  color:var(--noite);background:var(--c,var(--sol));
+  padding:3px 8px;
+}
+.gem{
+  display:inline-block;vertical-align:middle;margin-left:8px;
+  font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:700;
+  color:var(--noite);background:var(--sol);padding:3px 8px;border-radius:999px;
+}
+.item-gem{border-left:2px solid var(--sol);padding-left:14px}
+.where{
+  font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--areia-dim);margin-top:7px;
+}
+.item ul{list-style:none;margin-top:9px}
+.item li{
+  position:relative;padding-left:16px;margin-top:5px;
+  color:var(--areia-dim);font-size:.97rem;
+}
+.item li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:6px;height:1.5px;background:var(--areia-dim);
+}
+.note{margin-top:9px;color:var(--areia-dim);font-size:.97rem}
+.aside{
+  margin-top:10px;padding-left:12px;border-left:2px solid var(--coral);
+  font-size:.92rem;font-style:italic;color:var(--areia-dim);
+}
+.tip{
+  margin-top:12px;padding:11px 13px;
+  background:rgba(255,194,74,.08);
+  border-left:2px solid var(--sol);
+  font-size:.93rem;color:var(--areia-dim);
+}
+.tip-label{
+  display:block;margin-bottom:4px;
+  font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sol);
+}
+.link{
+  display:inline-flex;align-items:center;gap:7px;margin-top:12px;margin-right:8px;
+  font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;text-decoration:none;
+  color:var(--coral);border:1px solid rgba(255,94,91,.4);border-radius:999px;
+  padding:6px 12px;transition:background .18s ease;
+}
+.link:hover{background:rgba(255,94,91,.12)}
+.link svg{width:11px;height:11px;flex:none}
+
+/* ---------- DIA GRID ---------- */
+.panel[data-panel="dia"] .item{--c:var(--sol)}
+.kicker{
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sol);margin-bottom:8px;display:block;
+}
+
+/* ---------- FIJOS ---------- */
+#fijos{background:var(--mar)}
+#fijos .item{--c:var(--sol)}
+
+footer{padding:38px 0 60px;text-align:center;background-color:var(--noite)}
+.credit{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+  font-family:'Space Mono',monospace;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;text-decoration:none;color:var(--sol);
+  border:1px solid rgba(255,194,74,.45);border-radius:999px;padding:9px 16px;
+}
+.credit:hover{background:rgba(255,194,74,.12)}
+.credit svg{width:11px;height:11px;flex:none}
+.credit-note{margin-top:12px}
+footer p{
+  font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--areia-dim);
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<a class="follow-top" href="https://www.instagram.com/cbass.music" target="_blank" rel="noopener">Si te gustó, seguime para más &nbsp;·&nbsp; @cbass.music <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Guía de un amigo · no de una guía</div>
+    <h1 class="display">Río de<em>Janeiro</em></h1>
+    <p class="lede">Dónde hay samba cada noche, dónde ver el atardecer y qué hacer cuando no querés hacer nada.</p>
+    <p class="hoy-line"><span class="dot"></span><span id="hoy-txt"></span><span id="clima" class="clima" hidden></span></p>
+  </div>
+</header>
+
+<section id="noche">
+  <div class="wrap">
+    <div class="tabs-rail">
+      <div class="tabs tabs-top" role="tablist" aria-label="Secciones">
+        <button class="tab tab-dia" role="tab" data-day="dia" style="--c:var(--sol)" aria-selected="false">Río de día</button>
+        <button class="tab tab-esc" role="tab" data-day="esc" style="--c:var(--coral)" aria-selected="false">Escapadas</button>
+        <button class="tab" role="tab" data-day="rest" style="--c:var(--areia)" aria-selected="false">Restaurantes</button>
+        <button class="tab" role="tab" data-day="lgbt" style="--c:var(--d-mie)" aria-selected="false">LGBT</button>
+        <button class="tab" role="tab" data-day="under" style="--c:var(--d-mar)" aria-selected="false">Under</button>
+        <button class="tab" role="tab" data-day="conex" style="--c:var(--d-lun)" aria-selected="false">Conexiones</button>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Noches de la semana">
+        <button class="tab" role="tab" data-day="lun" style="--c:var(--d-lun)" aria-selected="false">Lun</button>
+        <button class="tab" role="tab" data-day="mar" style="--c:var(--d-mar)" aria-selected="false">Mar</button>
+        <button class="tab" role="tab" data-day="mie" style="--c:var(--d-mie)" aria-selected="false">Mié</button>
+        <button class="tab" role="tab" data-day="jue" style="--c:var(--d-jue)" aria-selected="false">Jue</button>
+        <button class="tab" role="tab" data-day="vie" style="--c:var(--d-vie)" aria-selected="false">Vie</button>
+        <button class="tab" role="tab" data-day="sab" style="--c:var(--d-sab)" aria-selected="false">Sáb</button>
+        <button class="tab" role="tab" data-day="dom" style="--c:var(--d-dom)" aria-selected="false">Dom</button>
+      </div>
+    </div>
+
+    <!-- RÍO DE DÍA -->
+    <div class="panel" data-panel="dia" style="--c:var(--sol)" hidden>
+      <h2 class="panel-title">Río de día</h2>
+      <p class="panel-lede">Estos planes sirven cualquier día. Sol, vista, café y caipi.</p>
+
+    <div class="item">
+      <span class="kicker">Brunch</span>
+      <h3><span class="emo">☕</span>Confeitaria Colombo — Forte de Copacabana</h3>
+      <p class="note">Ideal a la mañana o al mediodía. Vista al mar.</p>
+      <a class="link" href="https://www.instagram.com/reel/DSxV9zogCEh/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Isla</span>
+      <h3><span class="emo">🛶</span>Ilha da Gigóia</h3>
+      <ul>
+        <li>Fijate qué días hay eventos o música</li>
+        <li>Plan chill, caipi y atardecer</li>
+        <li>Almorzar en algún resto de la isla</li>
+      </ul>
+      <a class="link" href="https://www.instagram.com/reel/DQ7gy9Kj2ee/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Mirador</span>
+      <h3><span class="emo">🌄</span>Mirante do Pedrão</h3>
+      <ul>
+        <li>Chequeá los días con eventos</li>
+        <li>Una de las mejores vistas de Río</li>
+        <li>Buen sunset, vibe local</li>
+      </ul>
+      <a class="link" href="https://www.instagram.com/reel/DLhkhevO_Cz/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Plan completo</span>
+      <h3><span class="emo">🚡</span>Pão de Açúcar + DJ de sunset</h3>
+      <ul>
+        <li>Subir por la tarde por la trilha</li>
+        <li>DJ de sunset, de 15:00 a 18:00</li>
+        <li>Bajar en bondinho, o de vuelta por la trilha según la hora</li>
+      </ul>
+      <p class="note">Subiendo por el trekking te ahorrás el bondinho de ida, y encima es una aventura y algo de ejercicio: son unos 30 minutos.</p>
+      <p class="tip"><span class="tip-label">Tip</span>Cuando ya se hizo de noche igual te dejan bajar caminando, pero tenés que firmar un consentimiento haciéndote responsable.</p>
+      <a class="link" href="https://www.instagram.com/reel/DEYNNOeJaiv/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Caminata</span>
+      <h3><span class="emo">🚋</span>Santa Teresa</h3>
+      <ul>
+        <li>Caminar por las callecitas</li>
+        <li>Samba dos Guimarães</li>
+        <li>Bar do Serginho</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Sábado temprano</span>
+      <h3><span class="emo">🍻</span>Rua do Senado</h3>
+      <ul>
+        <li>Callecitas históricas con bares</li>
+        <li>Sábado desde temprano hasta la tarde</li>
+        <li>Quedarse a almorzar ahí</li>
+      </ul>
+      <a class="link" href="https://www.instagram.com/reel/DRx3uxACQg5/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Atardecer</span>
+      <h3><span class="emo">🥃</span>Mureta da Urca</h3>
+      <div class="where">Urca</div>
+      <p class="note">Sentarse en el muro con una cachaça de milho verde o una original de 600, o las dos, mirando cómo se cae el sol. Es un after office espectacular.</p>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Vista · todos los días</span>
+      <h3><span class="emo">🌇</span>Bar da Laje</h3>
+      <div class="where">Vidigal</div>
+      <p class="note">Una de las mejores vistas de Río, arriba en la favela do Vidigal, que es súper segura. Abren todos los días, pero fijate en el Instagram antes de subir.</p>
+      <a class="link" href="https://www.instagram.com/bardalaje" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Trabajar o tomar algo</span>
+      <h3><span class="emo">🍹</span>Rooftops en Copacabana</h3>
+      <ul>
+        <li>Novotel</li>
+        <li>Hilton</li>
+        <li>Pestana</li>
+      </ul>
+      <p class="note">Caipi, café y laptop friendly.</p>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Amanecer</span>
+      <h3><span class="emo">🏄</span>Paddle board al alba</h3>
+      <p class="note">Amanecer en el mar. Plan zen y energía.</p>
+      <a class="link" href="https://www.instagram.com/reel/DFC7oX1uCj4/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Trekking</span>
+      <h3><span class="emo">🥾</span>Tres cerros, tres niveles</h3>
+      <ul>
+        <li>Pão de Açúcar — fácil, 25 min</li>
+        <li>Morro Dois Irmãos — fácil a intermedio, moto + 40 min</li>
+        <li>Pedra da Gávea — moderado, 2 h</li>
+      </ul>
+    </div>
+    </div>
+
+    <!-- ESCAPADAS -->
+    <div class="panel" data-panel="esc" style="--c:var(--coral)" hidden>
+      <h2 class="panel-title">Escapadas</h2>
+      <p class="panel-lede">Paseos de uno o dos días, fuera de la rutina de la ciudad. Preguntame por cada uno: te paso precios y contactos.</p>
+    <div class="item">
+      <span class="kicker">Sierra · día completo</span>
+      <h3><span class="emo">🏰</span>Petrópolis</h3>
+      <ul>
+        <li>Alrededor de 1 h 30 de Río, subiendo a la sierra</li>
+        <li>La ciudad imperial: Museu Imperial, la catedral, el Palácio de Cristal</li>
+        <li>Hace bastante más fresco que en Río, llevá algo de abrigo</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Volar · 1 mañana</span>
+      <h3><span class="emo">🪂</span>Asa delta desde Pedra Bonita</h3>
+      <ul>
+        <li>Despegue de la rampa de Pedra Bonita, aterrizaje en la playa de São Conrado</li>
+        <li>Vuelo tándem, no hace falta experiencia</li>
+        <li>Depende del viento: se define el mismo día, mejor a la mañana</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Volar · 15 minutos</span>
+      <h3><span class="emo">🚁</span>Paseo en helicóptero</h3>
+      <ul>
+        <li>Cristo, Pão de Açúcar y las playas desde arriba</li>
+        <li>Salidas desde la Lagoa y desde el Morro da Urca</li>
+        <li>Hay recorridos de distinta duración</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Playa · ida y vuelta en el día</span>
+      <h3><span class="emo">🐠</span>Arraial do Cabo</h3>
+      <ul>
+        <li>Alrededor de 2 h 30 de Río</li>
+        <li>Agua turquesa, le dicen el Caribe brasileño</li>
+        <li>El plan es el paseo en barco por las playas y las grutas</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Isla · mínimo una noche</span>
+      <h3><span class="emo">🌴</span>Ilha Grande</h3>
+      <ul>
+        <li>Alrededor de 2 h 30 hasta el puerto, más el barco a Vila do Abraão</li>
+        <li>No hay autos: todo se hace caminando o en barco</li>
+        <li>Trilhas por la selva y playas como Lopes Mendes</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <span class="kicker">Playa · mejor con una noche</span>
+      <h3><span class="emo">🏖️</span>Búzios</h3>
+      <ul>
+        <li>Alrededor de 2 h 30 de Río</li>
+        <li>Muchas playas chicas, cada una con su onda</li>
+        <li>De noche, Rua das Pedras</li>
+      </ul>
+    </div>
+    </div>
+
+    <!-- RESTAURANTES -->
+    <div class="panel" data-panel="rest" style="--c:var(--areia)" hidden>
+      <h2 class="panel-title">Restaurantes</h2>
+      <p class="panel-lede">Dónde comer bien, de la pizza al sushi libre.</p>
+
+      <div class="item item-gem">
+        <span class="kicker">Imperdible</span>
+        <h3><span class="emo">🎶</span>Bip Bip <span class="gem">★ Joya</span></h3>
+        <div class="where">Copacabana</div>
+        <p class="note">Un bar mínimo donde se arma una roda de samba y la gente escucha desde la vereda. Es parte de la cultura de Río, no un lugar más para comer.</p>
+        <a class="link" href="https://www.instagram.com/reel/DYHx-nvO0T5/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Boteco</span>
+        <h3><span class="emo">🍢</span>Comidas de boteco en Zona Sul</h3>
+        <p class="note">Los clásicos de barra, dónde comerlos.</p>
+        <a class="link" href="https://www.instagram.com/reel/DH3nLzXulrd/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Pizza</span>
+        <h3><span class="emo">🍕</span>Stalos</h3>
+        <p class="note">Probá la pizza. Es la razón para ir.</p>
+        <a class="link" href="https://maps.app.goo.gl/VHbV2p14j51GFHhd9" target="_blank" rel="noopener">Ver en el mapa <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Comida a quilo</span>
+        <h3><span class="emo">🍛</span>Viva</h3>
+        <p class="note">Comida a quilo de calidad. Los fines de semana hay música en vivo.</p>
+        <a class="link" href="https://maps.app.goo.gl/6cZ1K4sQXQRQhpg1A" target="_blank" rel="noopener">Ver en el mapa <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Vegetariano</span>
+        <h3><span class="emo">🥗</span>Brota</h3>
+        <p class="note">La mejor comida vegetariana de la ciudad.</p>
+        <a class="link" href="https://maps.app.goo.gl/vjt4nJcFdQWY9GXz8" target="_blank" rel="noopener">Ver en el mapa <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Clásico con vista</span>
+        <h3><span class="emo">🍽️</span>Terra Brasilis</h3>
+        <p class="note">Vista tremenda del Pão de Açúcar y de Praia Vermelha.</p>
+        <a class="link" href="https://maps.app.goo.gl/CSkc9yB1TfHGAwFk6" target="_blank" rel="noopener">Ver en el mapa <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="kicker">Japonés</span>
+        <h3><span class="emo">🍜</span>Ramen y sushi</h3>
+        <p class="note">Los mejores ramen, y el sushi también muy bueno. Tienen sushi libre hasta las 23:00, alrededor de 160 reales.</p>
+        <a class="link" href="https://maps.app.goo.gl/w58zGirDzDMWx1ss8" target="_blank" rel="noopener">Ver en el mapa <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- LGBT -->
+    <div class="panel" data-panel="lgbt" style="--c:var(--d-mie)" hidden>
+      <h2 class="panel-title">LGBT</h2>
+      <p class="panel-lede">Fiestas, boliches y todo lo demás. Muchas son itinerantes: mirá el perfil para ver cuándo cae la próxima.</p>
+
+      <div class="item">
+        <span class="time">Miércoles · 21:00 – 03:00</span>
+        <h3><span class="emo">🏳️‍🌈</span>Pink Flamingo</h3>
+        <div class="where">Copanema</div>
+        <p class="note">Boliche gay con drag queens.</p>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🏳️‍🌈</span>Saunas gay y cruising bars</h3>
+        <p class="note">¿Te pintó mojar la galletita? 💦 Acá está el mapa completo de la ciudad, en un solo posteo.</p>
+        <a class="link" href="https://www.instagram.com/p/DSDIzkyCFHq/" target="_blank" rel="noopener">Ver la lista <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🕺</span>Deseo Latino</h3>
+        <p class="note">Fiesta under gay. Pop latino y house.</p>
+        <a class="link" href="https://www.instagram.com/deseolatino_" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🪩</span>Sarração</h3>
+        <p class="note">Más house y pop. Fiesta grande.</p>
+        <a class="link" href="https://www.instagram.com/festasarracao" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🏊</span>Domply</h3>
+        <div class="where">Santa Teresa</div>
+        <p class="note">En una casa con pileta. Indie, house y groove. Hermosa fiesta.</p>
+        <a class="link" href="https://www.instagram.com/domply_" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🔥</span>The Home</h3>
+        <p class="note">Fiesta gay en uno de los mejores venues de Río. Tribal y darkroom, bastante intensa.</p>
+        <a class="link" href="https://www.instagram.com/thehomerio" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">💄</span>V de Viadão</h3>
+        <p class="note">Muchos looks, pop y house. Divertida.</p>
+        <a class="link" href="https://www.instagram.com/vdeviadao" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="time">Domingos</span>
+        <h3><span class="emo">🪘</span>Sambay</h3>
+        <p class="note">Roda de samba gay, pero con electrónica.</p>
+        <a class="link" href="https://www.instagram.com/rodasambay" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- UNDER -->
+    <div class="panel" data-panel="under" style="--c:var(--d-mar)" hidden>
+      <h2 class="panel-title">Under</h2>
+      <p class="panel-lede">Lo que no está en ninguna guía. Andá con alguien que conozca.</p>
+
+      <div class="item">
+        <span class="time">Viernes</span>
+        <h3><span class="emo">🔊</span>Baile underground en Vidigal</h3>
+        <div class="where">Vidigal</div>
+        <a class="link" href="https://www.instagram.com/visao.vdg" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <span class="time">Sábado · 21:00 – 07:00 · gratis</span>
+        <h3><span class="emo">🏳️‍🌈</span>Bar Dellas</h3>
+        <div class="where">Praça da Harmonia</div>
+        <p class="note">Es el lugar donde uno casi siempre termina cayendo. Fiestas más alternativas y queer. Siempre es una opción.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Lali estuvo acá ❤️‍🔥</p>
+        <a class="link" href="https://www.instagram.com/bar_dellas_reserva" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">Sábado todo el día → domingo al mediodía</span>
+        <h3><span class="emo">🔊</span>Baile Santo Amaro</h3>
+        <p class="note">Arranca el sábado y sigue hasta casi el mediodía del domingo. Fijate la programación antes de ir.</p>
+        <p class="aside">Es súper seguro, pero no te hagas el loco: está bueno que vayas con alguien que conozca.</p>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🎛️</span>La Goxtosa</h3>
+        <p class="note">Fiesta internacional y multicultural entre Buenos Aires y Río. Indie house con electrofunk. Fijate la programación.</p>
+        <a class="link" href="https://www.instagram.com/lagoxtosa.br" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">👾</span>Bugpixel</h3>
+        <p class="note">Fijate la programación en el perfil.</p>
+        <a class="link" href="https://www.instagram.com/bugpixel" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- CONEXIONES -->
+    <div class="panel" data-panel="conex" style="--c:var(--d-lun)" hidden>
+      <h2 class="panel-title">Conexiones</h2>
+      <p class="panel-lede">Dónde conocer gente si llegaste sin conocer a nadie. Los grupos de WhatsApp se abren con un toque.</p>
+
+      <div class="item">
+        <h3><span class="emo">🤝</span>Meet Up Friends</h3>
+        <p class="note">Para conocer gente y engancharse a planes.</p>
+        <a class="link" href="https://chat.whatsapp.com/IK5ERGATtno2jwzwYlZltA" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">💃</span>Clases de baile</h3>
+        <p class="note">Dónde y cuándo hay clases.</p>
+        <a class="link" href="https://chat.whatsapp.com/D21ftbDaZgZKd6sKqlXdoJ" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🌎</span>Nômads Rio</h3>
+        <p class="note">La comunidad de nómades digitales en Río.</p>
+        <a class="link" href="https://chat.whatsapp.com/EwO2BXWNz8VK9x25GWgfCc" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🏐</span>Volleyball Rio</h3>
+        <p class="note">Para armar partidos en la playa.</p>
+        <a class="link" href="https://chat.whatsapp.com/EKr0ac3UUkx7ofCK10zZPc" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🎪</span>Outlier Experiences</h3>
+        <p class="note">Planes y experiencias fuera de lo común.</p>
+        <a class="link" href="https://chat.whatsapp.com/DdHrWokFJ056kB0SvdduBU" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🔑</span>Alquileres cortos</h3>
+        <p class="note">Short-term rentals: si venís por unas semanas.</p>
+        <a class="link" href="https://chat.whatsapp.com/L6wUpvb5tWkI3Xu2X4FIGc" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🏠</span>Alquileres largos</h3>
+        <p class="note">Long-term rentals: si te quedás una temporada.</p>
+        <a class="link" href="https://chat.whatsapp.com/CXfguz7haf0952LyBxoPTB" target="_blank" rel="noopener">Entrar al grupo <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+
+      <div class="item">
+        <h3><span class="emo">🗂️</span>Todos los grupos</h3>
+        <p class="note">La lista completa de grupos de la comunidad nómade, por si buscás alguno más específico.</p>
+        <a class="link" href="https://svcode.notion.site/Digital-Nomad-LinkTree-404891883bc24646a3f06b216cb31d88" target="_blank" rel="noopener">Ver la lista <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">Martes · 21:00 – 01:00</span>
+        <h3><span class="emo">🗣️</span>Mundo Lingo</h3>
+        <div class="where">Guacamole Bar</div>
+        <p class="note">Intercambio de idiomas. Te ponen una banderita según los que hablás y la charla arranca sola. De lo más fácil para conocer gente.</p>
+      </div>
+
+      <div class="item">
+        <span class="time">Jueves · 21:00 – 01:00</span>
+        <h3><span class="emo">🗣️</span>Mundo Lingo — Bukowski</h3>
+        <div class="where">Botafogo</div>
+        <p class="note">Mismo formato, otro día y otro barrio. La música tira más al rock de todos los tiempos.</p>
+      </div>
+    </div>
+
+    <!-- LUNES -->
+    <div class="panel" data-panel="lun" style="--c:var(--d-lun)" hidden>
+      <h2 class="panel-title">Lunes</h2>
+      <div class="item">
+        <span class="time">17:30</span>
+        <h3><span class="emo">🎷</span>Bar do Serginho</h3>
+        <div class="where">Santa Teresa</div>
+        <p class="note">Chorinho, bossa nova y jazz. Arranca temprano. Es lindo para tener una cita: bien fino y snob.</p>
+      </div>
+      <div class="item">
+        <span class="time">Desde 21:00</span>
+        <h3><span class="emo">🪘</span>Pedra do Sal</h3>
+        <p class="note">Es una calle que últimamente se llenó de gringos, pero igual se arma mucha fiesta. Es el lugar histórico donde se originó el samba, aunque hoy suena música de todo tipo. Después, el after en el boliche de al lado, en Rua Sacadura Cabral, hasta las 4.</p>
+        <p class="aside">Sí o sí tenés que ir a conocerlo una vez.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Cuando pidas la caipi, fijate que el hielo sea filtrado: rolito con el agujerito en el medio y bien cristalino. Si es turbio, lechoso y escamado, permitime dudar.</p>
+        <a class="link" href="https://www.instagram.com/pedradosaloficial" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🎤</span>Sarreufa Bar</h3>
+        <div class="where">o Bambina, como siempre se lo conoció</div>
+        <p class="note">Un pool con karaoke, medio de mala muerte, pero te salva la noche si querés seguirla un poco más.</p>
+      </div>
+    </div>
+
+    <!-- MARTES -->
+    <div class="panel" data-panel="mar" style="--c:var(--d-mar)" hidden>
+      <h2 class="panel-title">Martes</h2>
+      <div class="item">
+        <h3><span class="emo">💃</span>Forró do Vuvu</h3>
+        <p class="note">Forró y baile.</p>
+        <a class="link" href="https://www.instagram.com/forrodovuvu" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🥁</span>Pagode da Garagem</h3>
+        <div class="where">Praça Tiradentes</div>
+        <a class="link" href="https://www.instagram.com/pagodedagaragemoficial" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">21:00 – 01:00</span>
+        <h3><span class="emo">🗣️</span>Mundo Lingo</h3>
+        <div class="where">Guacamole Bar</div>
+        <p class="note">Intercambio de idiomas, buen lugar para conocer gente. Conviene caer entre 21 y 22 para aprovecharlo bien; alrededor de la 1 se termina.</p>
+      </div>
+    </div>
+
+    <!-- MIÉRCOLES -->
+    <div class="panel" data-panel="mie" style="--c:var(--d-mie)" hidden>
+      <h2 class="panel-title">Miércoles</h2>
+      <div class="item">
+        <span class="time">21:00 – 02:00</span>
+        <h3><span class="emo">🍕</span>Fatchia Pizza</h3>
+        <div class="where">Glória · Rua Benjamin Constant 8</div>
+        <p class="note">Pizza, disco y bar en un espacio chiquito e intimista. La pizza es estilo Detroit, cuadrada, con el borde de queso caramelizado. Los DJ pasan vinilos y en algún momento se empieza a bailar entre las mesas.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Suele haber cola en la calle, así que caé temprano, antes de que arranque el DJ. Las porciones son chicas y no es barato: si vas con hambre de verdad, comé algo antes.</p>
+        <a class="link" href="https://www.instagram.com/fatchia_pizza" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">18:00 – 00:00</span>
+        <h3><span class="emo">🎺</span>Praça São Salvador</h3>
+        <div class="where">Laranjeiras</div>
+        <p class="note">Una plaza rodeada de bares donde se arma un baile. Samba, gente linda y calle. De lo más local que vas a ver.</p>
+      </div>
+      <div class="item">
+        <span class="time">21:00 – 03:00</span>
+        <h3><span class="emo">🏳️‍🌈</span>Pink Flamingo</h3>
+        <div class="where">Copanema</div>
+        <p class="note">Boliche gay con drag queens.</p>
+      </div>
+
+    </div>
+
+    <!-- JUEVES -->
+    <div class="panel" data-panel="jue" style="--c:var(--d-jue)" hidden>
+      <h2 class="panel-title">Jueves</h2>
+      <div class="item">
+        <span class="time">18:00 – 02:00</span>
+        <h3><span class="emo">🍸</span>Destilaria Maravilha</h3>
+        <p class="note">Los tragos son muy ricos: el espresso martini es el que más recomiendo, alrededor de 35 reales. La música siempre está buena, entre funk, indie pop y clásicos brasileños.</p>
+        <a class="link" href="https://www.instagram.com/destilariamaravilha" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">21:00 – 04:00</span>
+        <h3><span class="emo">🪘</span>SIBC — Samba Independente dos Bons Costumes</h3>
+        <p class="note">El plato fuerte del jueves.</p>
+        <a class="link" href="https://www.instagram.com/independentedosbonscostumes" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🍾</span>Barzin</h3>
+        <div class="where">Ipanema</div>
+        <p class="note">Fiesta hétero de argentinos y gringos. Se hizo conocido después del drama con la abogada argentina, sean pillos al pagar cuando termine la fiesta para que no les caguen.</p>
+        <p class="aside">A mí particularmente no me gusta.</p>
+      </div>
+      <div class="item">
+        <span class="time">21:00 – 01:00</span>
+        <h3><span class="emo">🗣️</span>Mundo Lingo — Bukowski</h3>
+        <div class="where">Botafogo</div>
+        <p class="note">Evento de intercambio cultural con bebidas. Conviene caer entre 21 y 22 para aprovecharlo bien; alrededor de la 1 se termina. La música tira más al rock de todos los tiempos.</p>
+      </div>
+      <div class="item">
+        <span class="time">18:00 – 00:00 aprox · after office</span>
+        <h3><span class="emo">🍻</span>Baixo Gávea</h3>
+        <div class="where">Gávea</div>
+        <p class="note">Los jueves la gente se junta a tomar y queda la calle llena. Vas a pagar un poquito caro, pero está bueno para conocer un barrio distinto y hay linda gente.</p>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🍻</span>Macuna y Rua Arnaldo Quintela</h3>
+        <div class="where">Botafogo · «a rua mais badalada do Rio»</div>
+        <p class="note">Vibe tipo Villa Crespo: más indie, más hippie con OSDE. La noche va así:</p>
+        <ul>
+          <li>Arrancar en Macuna, sobre Arnaldo Quintela</li>
+          <li>Birrita y cachaça en el bar Treme Treme</li>
+          <li>Terminar en Quartinho, hasta las 2:00</li>
+        </ul>
+      </div>
+      <div class="item">
+        <span class="time">Horario de boliche</span>
+        <h3><span class="emo">🍸</span>Bosque Bar</h3>
+        <div class="where">Gávea</div>
+        <p class="note">Lugar cheto y hétero, pero muy famoso en Río. Acá se viene a la fiesta, arranca tarde. Entrá a la página para ver las opciones de la noche.</p>
+        <a class="link" href="https://www.instagram.com/barbosquebar" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- VIERNES -->
+    <div class="panel" data-panel="vie" style="--c:var(--d-vie)" hidden>
+      <h2 class="panel-title">Viernes</h2>
+      <div class="item">
+        <h3><span class="emo">🪘</span>Pedra do Sal</h3>
+        <p class="note">Samba en la calle, clásico de Río. Es una calle que últimamente se llenó de gringos, pero igual se arma mucha fiesta. Es el lugar histórico donde se originó el samba, aunque hoy suena música de todo tipo.</p>
+        <p class="aside">Sí o sí tenés que ir a conocerlo una vez.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Cuando pidas la caipi, fijate que el hielo sea filtrado: rolito con el agujerito en el medio y bien cristalino. Si es turbio, lechoso y escamado, permitime dudar.</p>
+        <a class="link" href="https://www.instagram.com/pedradosaloficial" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🎉</span>Lapa</h3>
+        <ul>
+          <li>Bar da Cachaça</li>
+          <li>Vaca Atolada</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🔊</span>Baile underground en Vidigal</h3>
+        <a class="link" href="https://www.instagram.com/visao.vdg" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🪩</span>D.EDGE</h3>
+        <p class="note">Como el Crobar de Buenos Aires. Entrá a la página para ver la programación del día.</p>
+        <p class="aside">Pedime que te puedo conseguir frees.</p>
+        <a class="link" href="https://www.instagram.com/dedgeclubrio" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">Horario de boliche</span>
+        <h3><span class="emo">🍸</span>Bosque Bar</h3>
+        <div class="where">Gávea</div>
+        <p class="note">Lugar cheto y hétero, pero muy famoso en Río. Acá se viene a la fiesta, arranca tarde. Entrá a la página para ver las opciones de la noche.</p>
+        <a class="link" href="https://www.instagram.com/barbosquebar" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">18:00 – 02:00</span>
+        <h3><span class="emo">🍸</span>Destilaria Maravilha</h3>
+        <p class="note">Los tragos son muy ricos: el espresso martini es el que más recomiendo, alrededor de 35 reales. La música siempre está buena, entre funk, indie pop y clásicos brasileños.</p>
+        <a class="link" href="https://www.instagram.com/destilariamaravilha" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🍷</span>Rua Moraes e Vale</h3>
+        <div class="where">entre Lapa y Glória</div>
+        <p class="note">El nuevo point carioca para tomar algo. Gente muy cool.</p>
+        <a class="link" href="https://www.instagram.com/reel/DGT_Z6Yvr0N/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">📍</span>Más lugares para un viernes</h3>
+        <p class="note">Una lista corta para cuando ninguna de las de arriba te cierre.</p>
+        <a class="link" href="https://www.instagram.com/reel/DC9-c4-Rg11/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- SÁBADO -->
+    <div class="panel" data-panel="sab" style="--c:var(--d-sab)" hidden>
+      <h2 class="panel-title">Sábado</h2>
+      <div class="item">
+        <span class="time">Desde temprano</span>
+        <h3><span class="emo">🍻</span>Rua do Senado</h3>
+        <div class="where">Centro · de día</div>
+        <p class="note">Callecitas históricas con bares. Va desde la mañana hasta la tarde, y se almuerza ahí mismo.</p>
+        <a class="link" href="https://www.instagram.com/reel/DRx3uxACQg5/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">Sábados · 19:30 – 01:30</span>
+        <h3><span class="emo">🪘</span>Samba dos Guimarães</h3>
+        <div class="where">Mercado das Pulgas · R. Almirante Alexandrino 501, Santa Teresa</div>
+        <p class="note">Una de las rodas de samba más auténticas de Río, en un casarón del Largo dos Guimarães. Toca un grupo de samba, hay trío de forró y DJ en los intervalos. Buena parte del lugar está techada, así que se hace igual si llueve.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Se llena. Comprá la entrada anticipada por Sympla: sale alrededor de 35 reales y encima suele venir con la primera hora de chopp gratis.</p>
+        <a class="link" href="https://www.instagram.com/sambadosguimaraes" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">21:00 – 07:00 · gratis</span>
+        <h3><span class="emo">🏳️‍🌈</span>Bar Dellas</h3>
+        <div class="where">Praça da Harmonia</div>
+        <p class="note">Es el lugar donde uno casi siempre termina cayendo. Fiestas más alternativas y queer. Siempre es una opción.</p>
+        <p class="tip"><span class="tip-label">Tip</span>Lali estuvo acá ❤️‍🔥</p>
+        <a class="link" href="https://www.instagram.com/bar_dellas_reserva" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🪩</span>D.EDGE</h3>
+        <p class="note">Como el Crobar de Buenos Aires. Entrá a la página para ver la programación del día.</p>
+        <p class="aside">Pedime que te puedo conseguir frees.</p>
+        <a class="link" href="https://www.instagram.com/dedgeclubrio" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">Horario de boliche</span>
+        <h3><span class="emo">🍸</span>Bosque Bar</h3>
+        <div class="where">Gávea</div>
+        <p class="note">Lugar cheto y hétero, pero muy famoso en Río. Acá se viene a la fiesta, arranca tarde. Entrá a la página para ver las opciones de la noche.</p>
+        <a class="link" href="https://www.instagram.com/barbosquebar" target="_blank" rel="noopener">Ver programación <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🍹</span>Rooftop en Copacabana</h3>
+        <p class="note">Caipi de sunset y después noche.</p>
+        <a class="link" href="https://www.instagram.com/reel/DE7SLemuxL9/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <span class="time">18:00 – 02:00</span>
+        <h3><span class="emo">🍸</span>Destilaria Maravilha</h3>
+        <p class="note">Los tragos son muy ricos: el espresso martini es el que más recomiendo, alrededor de 35 reales. La música siempre está buena, entre funk, indie pop y clásicos brasileños.</p>
+        <a class="link" href="https://www.instagram.com/destilariamaravilha" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🎊</span>Infinidad de fiestas</h3>
+        <p class="note">Los sábados hay de todo. Esto se busca en el momento.</p>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🍷</span>Rua Moraes e Vale</h3>
+        <div class="where">entre Lapa y Glória</div>
+        <p class="note">El nuevo point carioca para tomar algo. Gente muy cool.</p>
+        <a class="link" href="https://www.instagram.com/reel/DGT_Z6Yvr0N/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+
+    <!-- DOMINGO -->
+    <div class="panel" data-panel="dom" style="--c:var(--d-dom)" hidden>
+      <h2 class="panel-title">Domingo</h2>
+      <div class="item">
+        <h3><span class="emo">🌤️</span>Sin agenda fija</h3>
+        <p class="note">El domingo se arma solo. Dos cosas que sí funcionan:</p>
+        <ul>
+          <li>Fatchia Pizza, que abre de miércoles a domingos, 21:00 a 02:00</li>
+          <li>Hay samba todos los días — mirá la agenda al final</li>
+        </ul>
+      </div>
+      <div class="item">
+        <h3><span class="emo">🪘</span>Sambay</h3>
+        <p class="note">Roda de samba gay, pero con electrónica. Solo los domingos.</p>
+        <a class="link" href="https://www.instagram.com/rodasambay" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="calcadao thin"></div>
+
+<section id="fijos">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="display">Info útil</h2></div>
+    <p class="sec-sub">Para cuando nada de esto te cierre y quieras buscar por tu cuenta.</p>
+
+    <div class="item">
+      <h3><span class="emo">🪘</span>Samba todos los días</h3>
+      <p class="note">Dónde hay samba cada día de la semana.</p>
+      <a class="link" href="https://www.instagram.com/reel/DDGDSIWvvY2/" target="_blank" rel="noopener">Ver reel <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+    <div class="item">
+      <h3><span class="emo">📅</span>Roles Bons</h3>
+      <p class="note">Agenda de eventos y bandas.</p>
+      <a class="link" href="https://www.instagram.com/rolesbons" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+    <div class="item">
+      <h3><span class="emo">🍽️</span>Cozinha Arrumada</h3>
+      <p class="note">Dónde comer.</p>
+      <a class="link" href="https://www.instagram.com/cozinha.arrumada" target="_blank" rel="noopener">Ver perfil <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="calcadao"></div>
+
+<footer>
+  <div class="wrap">
+    <p>Cualquier cosa me escribís</p>
+    <a class="credit" href="https://www.instagram.com/cbass.music" target="_blank" rel="noopener">Creado por @cbass.music <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9 9 3M4.2 3H9v4.8"/></svg></a>
+    <p class="credit-note">Seguime y te tiro más opciones ❤️‍🔥</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  var names = {dia:'de día',esc:'escapadas',rest:'restaurantes',lgbt:'LGBT',under:'under',conex:'conexiones',lun:'lunes',mar:'martes',mie:'miércoles',jue:'jueves',vie:'viernes',sab:'sábado',dom:'domingo'};
+  var order = ['dom','lun','mar','mie','jue','vie','sab'];
+
+  function select(day, scroll){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.day === day)); });
+    panels.forEach(function(p){ p.hidden = p.dataset.panel !== day; });
+    if(scroll){
+      var t = tabs.filter(function(x){return x.dataset.day===day;})[0];
+      if(t && t.scrollIntoView) t.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'});
+    }
+  }
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ select(t.dataset.day, true); });
+  });
+
+  var today = order[new Date().getDay()];
+  select(today, false);
+  document.getElementById('hoy-txt').textContent = 'Hoy es ' + names[today];
+})();
+</script>
+<script>
+(function(){
+  var C = document.getElementById('clima');
+  if(!C) return;
+
+  var RAYS = '<g class="wx-rays"><path d="M9 1.6v2M9 14.4v2M1.6 9h2M14.4 9h2M3.8 3.8l1.4 1.4M12.8 12.8l1.4 1.4M14.2 3.8l-1.4 1.4M5.2 12.8l-1.4 1.4"/></g>';
+  var SUN  = '<circle class="wx-sun" cx="9" cy="9" r="4"/>';
+  var CLOUD= '<path class="wx-cloud" d="M7 20h9.2a3.8 3.8 0 0 0 .5-7.57 5.6 5.6 0 0 0-10.8-.6A3.7 3.7 0 0 0 7 20z"/>';
+  var DROPS= '<path class="wx-drop" d="M8 21.5v2.5"/><path class="wx-drop" d="M12 21.5v2.5"/><path class="wx-drop" d="M16 21.5v2.5"/>';
+  var BOLT = '<path class="wx-bolt" d="M13 20.5h3l-4.5 6 1-4h-3l4.5-6z"/>';
+
+  function svg(inner){
+    return '<svg class="wx" viewBox="0 0 26 27" fill="none" stroke="none" xmlns="http://www.w3.org/2000/svg">' + inner + '</svg>';
+  }
+
+  var ICONS = {
+    sol:      function(){ return svg('<g transform="translate(4,3)">' + RAYS + SUN + '</g>'); },
+    parcial:  function(){ return svg('<g transform="translate(9,-1) scale(.72)">' + RAYS + SUN + '</g>' + CLOUD); },
+    nublado:  function(){ return svg(CLOUD); },
+    lluvia:   function(){ return svg(CLOUD + DROPS); },
+    tormenta: function(){ return svg(CLOUD + BOLT); }
+  };
+
+  function tipo(code){
+    if(code === 0) return 'sol';
+    if(code === 1 || code === 2) return 'parcial';
+    if(code === 3 || code === 45 || code === 48) return 'nublado';
+    if(code >= 95) return 'tormenta';
+    if(code >= 51) return 'lluvia';
+    return 'parcial';
+  }
+
+  function pinta(code, max, min){
+    C.innerHTML = ICONS[tipo(code)]() + '<span>' + Math.round(max) + '° / ' + Math.round(min) + '°</span>';
+    C.hidden = false;
+  }
+
+  function conTimeout(url, ms){
+    return new Promise(function(res, rej){
+      var t = setTimeout(function(){ rej(new Error('timeout')); }, ms);
+      fetch(url).then(function(r){
+        clearTimeout(t);
+        if(!r.ok) throw new Error(r.status);
+        return r.json();
+      }).then(res, function(e){ clearTimeout(t); rej(e); });
+    });
+  }
+
+  var openMeteo = 'https://api.open-meteo.com/v1/forecast?latitude=-22.9068&longitude=-43.1729'
+    + '&current=weather_code&daily=temperature_2m_max,temperature_2m_min,weather_code'
+    + '&timezone=America%2FSao_Paulo&forecast_days=1';
+
+  // WWO -> WMO, para el plan B
+  function wwo(c){
+    c = parseInt(c, 10);
+    if(c === 113) return 0;
+    if(c === 116) return 2;
+    if(c === 119 || c === 122 || c === 143 || c === 248 || c === 260) return 3;
+    if(c === 200 || c === 386 || c === 389 || c === 392 || c === 395) return 95;
+    return 61;
+  }
+
+  conTimeout(openMeteo, 7000).then(function(d){
+    var code = (d.current && typeof d.current.weather_code === 'number')
+             ? d.current.weather_code : d.daily.weather_code[0];
+    pinta(code, d.daily.temperature_2m_max[0], d.daily.temperature_2m_min[0]);
+  }).catch(function(){
+    return conTimeout('https://wttr.in/Rio+de+Janeiro?format=j1', 7000).then(function(d){
+      var hoy = d.weather[0];
+      pinta(wwo(d.current_condition[0].weatherCode), hoy.maxtempC, hoy.mintempC);
+    });
+  }).catch(function(){
+    C.hidden = true;
+  });
+})();
+</script>
+</body>
+</html>
